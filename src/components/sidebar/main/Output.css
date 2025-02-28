@@ -1,0 +1,39 @@
+ .output{
+  width: 80%;
+ }
+.outputTitle{
+  display: flex;
+  gap: 20px;
+}
+
+.outputTitle img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+
+}
+.outputTitle p{
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.outputPara{
+  display: flex;
+  gap: 10px;
+
+}
+
+.outputPara img{
+
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+}
+.outputPara p{
+  height:370px;
+  overflow-y: scroll;
+}
+.outputPara p::-webkit-scrollbar{
+  display: none;
+}

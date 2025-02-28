@@ -1,0 +1,56 @@
+ .suggestion{
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+ }
+ .content{
+  width: 100%;
+  display: flex;
+  align-items: center;justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+
+ }
+
+ .input{
+  width: 46%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  border: 2px solid black;
+  margin-top:50px ;
+padding-left: 30px;
+padding-right: 15px;
+
+  
+ }
+ .input input{
+width: 46%;
+  border: none;
+  outline: none;
+  height: 50px;
+  background: transparent;
+color: white;
+font-size: 18px;
+ }
+
+ .input img{
+  width: 30px;
+  filter: invert(100%);
+  cursor: pointer;
+ }
+
+
+ input ::placeholder{
+  color: red;
+ }
+
+.inputIcons img{
+  margin-left: 10px;
+
+}
+ 
