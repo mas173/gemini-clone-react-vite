@@ -23,8 +23,8 @@ const Sidebar = () => {
           />
         </div>
 
-        <div className="newChat ">
-          <img className="imgSize" src={assets.plus_icon} alt="png"  onClick={()=>setshowpara(false)}/>
+        <div className="newChat " onClick={()=>setshowpara(false)}>
+          <img className="imgSize" src={assets.plus_icon} alt="png"  />
 
           {expand && <p>New chat</p>}
         </div>

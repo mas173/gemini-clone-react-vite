@@ -20,9 +20,10 @@ const GeminiStoreData = ({ children }) => {
 
   const ApiCall = async (value) => {
     // console.log("loading...");
-
+    
     let response = await axios({
-      url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBG0gTpcc3xJyenKUetu3CwdYpmEuizLWk",
+    
+      url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${"AIzaSyBG0gTpcc3xJyenKUetu3CwdYpmEuizLWk"}`,
       method: "post",
       data: {
         contents: [
