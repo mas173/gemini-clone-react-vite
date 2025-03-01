@@ -1,6 +1,6 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
-import Sidebar from './components/sidebar/sidebar'
+import Sidebar from './components/sidebar/Sidebar'
 import Heading from './components/sidebar/main/Heading'
 import "./App.css"
 import Content from './components/sidebar/main/Content'
