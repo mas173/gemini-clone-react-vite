@@ -33,7 +33,7 @@ const Sidebar = () => {
         {expand && previousPrompt.length > 0 && (
           previousPrompt.map((value)=>{
             return(
-              <div key={value} className="recentprompt"><img className="imgSize" src={assets.message_icon} alt="" /><p>{`${value.slice(0,8)}...`}</p></div>
+              <div key={`${value} ${Math.random()}`} className="recentprompt"><img className="imgSize" src={assets.message_icon} alt="" /><p>{`${value.slice(0,8)}...`}</p></div>
             )
           })
           
