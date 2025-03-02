@@ -29,7 +29,7 @@
     <Card data={data}></Card>
    </div>}
    <div className="input">
-    <input type="text" name="" id="" placeholder="Enter prmopt here..."  onChange={(e)=>setUserInput(e.target.value)} value={userInput}/>
+    <input type="text" name="" id="" placeholder="Enter prompt here..."  onChange={(e)=>setUserInput(e.target.value)} value={userInput}/>
     <div className='inputIcons'><img src={assets.gallery_icon} alt="" />
     <img src={assets.mic_icon} alt="" />
     <img src={assets.send_icon} alt=""  onClick={()=>onsent()}/></div>

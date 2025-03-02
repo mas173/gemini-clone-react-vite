@@ -3,7 +3,7 @@ import { assets } from "../../assets/assets";
 import "./Sidebar.css";
 import { GeminiStore } from "./store/Store";
 const Sidebar = () => {
-  const [expand, setExpand] = useState(true);
+  const [expand, setExpand] = useState(false);
   const check = useContext(GeminiStore);
   // console.log(check)
   const previousPrompt = useContext(GeminiStore).previousPrompt;
