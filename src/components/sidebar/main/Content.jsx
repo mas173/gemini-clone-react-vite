@@ -4,17 +4,28 @@
  import "./Content.css"
  import { GeminiStore } from '../store/Store';
  import Output from './Output';
-
+ import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import { useState } from 'react';
+import { useEffect } from 'react';
  const Content = () => {
 
 
  const showpara = useContext(GeminiStore).showpara;
- 
+   const [isListening, setIsListening] = useState(false);
  const setUserInput = useContext(GeminiStore).setUserInput;
  const userInput = useContext(GeminiStore).userInput;
  const onsent = useContext(GeminiStore).onsent;
 
+ const { transcript, listening, resetTranscript, browserSupportsSpeechRecognition } =
+   useSpeechRecognition();
 
+ useEffect(() => {
+  setUserInput(transcript);
+ }, [transcript]); // Update state whenever transcript changes
+
+ if (!browserSupportsSpeechRecognition) {
+   return <span>Browser doesn't support speech recognition.</span>;
+ }
 
 
 
@@ -31,8 +42,17 @@
    <div className="input">
     <input type="text" name="" id="" placeholder="Enter prompt here..."  onChange={(e)=>setUserInput(e.target.value)} value={userInput}/>
     <div className='inputIcons'><img src={assets.gallery_icon} alt="" />
-    <img src={assets.mic_icon} alt="" />
-    <img src={assets.send_icon} alt=""  onClick={()=>onsent()}/></div>
+    <img src={assets.mic_icon} alt=""  onClick={() => { 
+        setIsListening(true); 
+        SpeechRecognition.startListening({ continuous: true, interimResults: true });
+      }}/>
+    <img src={assets.send_icon} alt=""  onClick={()=>{
+      SpeechRecognition.stopListening();
+    
+      setIsListening(false);
+      onsent()
+      resetTranscript()}
+      }/></div>
 
     
    </div>
@@ -40,6 +60,7 @@
   
    </div>
    )
+   console.log(transcript);
  }
  
  export default Content;
