@@ -41,8 +41,8 @@ import { useEffect } from 'react';
    </div>}
    <div className="input">
     <input type="text" name="" id="" placeholder="Enter prompt here..."  onChange={(e)=>setUserInput(e.target.value)} value={userInput}/>
-    <div className='inputIcons'><img src={assets.gallery_icon} alt="" />
-    <img src={assets.mic_icon} alt=""  onClick={() => { 
+    <div className={'inputIcons'} ><img src={assets.gallery_icon} alt="" />
+    <img src={assets.mic_icon} alt="" className={`${isListening ? 'active' : ''}`} onClick={() => { 
         setIsListening(true); 
         SpeechRecognition.startListening({ continuous: true, interimResults: true });
       }}/>
